@@ -1,19 +1,19 @@
 #!/bin/sh
 
-while getopts u:d:s: flag
+while getopts user:domain:service: flag
 do
     case "${flag}" in
-        u) TARGET_USER=$OPTARG;;
-        d) DOMAIN=$OPTARG;;
-        s) SERVICES+=("$OPTARG");;
+        user) TARGET_USER=$OPTARG;;
+        domain) DOMAIN=$OPTARG;;
+        service) SERVICES+=$OPTARG;;
     esac
 done
 shift $((OPTIND -1))
 
 cd
-mkdir .ssl
+mkdir -p .ssl
 
-sudo tee /etc/letsencrypt/renew-hooks/deploy/apply_new_certs.sh > /dev/null <<EOF
+sudo tee /etc/letsencrypt/renewal-hooks/deploy/apply_new_certs.sh <<EOF
 CERTS_DIR="/etc/letsencrypt/live/$DOMAIN"
 NEW_CERTS_DIR="/home/$TARGET_USER/.ssl"
 USER_GROUP="$(id -ng $TARGET_USER)"
@@ -29,5 +29,4 @@ for service in "${SERVICES[@]}"; do
 done
 EOF
 
-chmod +x /etc/letsencrypt/renewal-hooks/deploy/apply_new_certs.sh
-chmod 750 /etc/letsencrypt/renewal-hooks/deploy/apply_new_certs.sh
+sudo chmod 750 /etc/letsencrypt/renewal-hooks/deploy/apply_new_certs.sh
