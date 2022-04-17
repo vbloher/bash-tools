@@ -1,11 +1,11 @@
 #!/bin/sh
 
-while getopts user:domain:services: flag
+while getopts u:d:s: flag
 do
     case "${flag}" in
-        user)       TARGET_USER=$OPTARG;;
-        domain)     DOMAIN=$OPTARG;;
-        services)   SERVICES+=("$OPTARG");;
+        u) TARGET_USER=$OPTARG;;
+        d) DOMAIN=$OPTARG;;
+        s) SERVICES+=("$OPTARG");;
     esac
 done
 shift $((OPTIND -1))
