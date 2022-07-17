@@ -2,7 +2,7 @@
 
 BLUE="\033[34m"
 NC="\033[0m"
-DASH="\\"
+DASH='\'
 
 echo ""
 echo -e "${BLUE}________________/${DASH}${DASH}${DASH}_________/${DASH}${DASH}${DASH}${DASH}${DASH}${DASH}___________________/${DASH}${DASH}${DASH}______________________________________        ${NC}"
