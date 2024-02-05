@@ -10,4 +10,6 @@ echo "alias sdc=\"sudo docker compose\"" >> $HOME/.bash_profile
 echo "alias sdl=\"sudo docker logs\"" >> $HOME/.bash_profile
 echo "alias sdps=\"sudo docker ps -a\"" >> $HOME/.bash_profile
 
+ln -s /etc/systemd/system $HOME/services
+
 source $HOME/.bash_profile
