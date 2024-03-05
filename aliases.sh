@@ -5,6 +5,7 @@ echo "alias sdr=\"sudo systemctl daemon-reload\"" >> $HOME/.bash_profile
 echo "alias sr=\"sudo systemctl restart\"" >> $HOME/.bash_profile
 echo "alias j=\"sudo journalctl --no-hostname -o cat -f -u\"" >> $HOME/.bash_profile
 
+echo "alias d=\"docker \"" >> $HOME/.bash_profile
 echo "alias sd=\"sudo docker \"" >> $HOME/.bash_profile
 echo "alias sdc=\"sudo docker compose\"" >> $HOME/.bash_profile
 echo "alias sdl=\"sudo docker logs\"" >> $HOME/.bash_profile
