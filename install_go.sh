@@ -7,6 +7,6 @@ sudo rm go1.17.7.linux-amd64.tar.gz
 
 mkdir -p $HOME/go/bin
 PATH=$PATH:/usr/local/go/bin
-echo "export PATH=$PATH:$(go env GOPATH)/bin" >> ~/.bash_profile
-echo "export GOPATH=$HOME/go" >> ~/.bash_profile
-source ~/.bash_profile
+echo "export PATH=$PATH:$(go env GOPATH)/bin" >> ~/.profile
+echo "export GOPATH=$HOME/go" >> ~/.profile
+source ~/.profile
